@@ -1,17 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ibozkurt <ibozkurt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/03 17:19:02 by ibozkurt          #+#    #+#             */
+/*   Updated: 2024/07/03 17:19:54 by ibozkurt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_alphabet(void){ 
+void	ft_print_alphabet(void)
+{
+	char	i;
 
-	char i;
-	i='a';
-	
-	while(i<='z')
+	i = 'a';
+	while (i <= 'z')
 	{
-		write(1,&i,1);
+		write(1, &i, 1);
 		i++;
 	}
-
-
-
 }
-

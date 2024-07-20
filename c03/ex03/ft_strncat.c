@@ -1,39 +1,34 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ibozkurt <ibozkurt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/20 11:27:20 by ibozkurt          #+#    #+#             */
+/*   Updated: 2024/07/20 11:27:21 by ibozkurt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char    *ft_strcat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-        int     i;
-	int	a;
-	
-	a = 0;
-        i = 0;
-	while (dest[i] != '\0')
-	{	
+	unsigned int	i;
+	unsigned int	j;
+
+	j = 0;
+	i = 0;
+	while (dest[i])
+	{
 		i++;
-		if (dest[i] == '\0')
-		{	
-			while (src[a] != '\0' && a < nb)
-			{
-				dest[i] = src[a];
-				a++;
-				i++;
-			}
-		}	
+	}
+	while (src[j] && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
 	dest[i] = '\0';
 	return (dest);
 }
 
-
-int main(void)
-{
-	char dest[50]="İbrahim Halil ";
-	char src[] = "Bozkurt ";
-	
-//	strcat(dest, src);
-//	printf("Original cat : %s\n ",dest);
-	printf("Myself func : %s\n ",ft_strcat(dest,src,5));
-}
 
